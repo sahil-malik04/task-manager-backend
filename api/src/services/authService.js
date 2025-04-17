@@ -2,8 +2,8 @@ const User = require("../models/User");
 const { alertMessages } = require("../utils/constants");
 const { successResponse, failResponse } = require("../utils/response");
 const { status } = require("../utils/status");
-const { isValidEmail, generateToken } = require("../utils/commonFunc");
-const { encryptText, decryptAndMatch } = require("../utils/cryptoOperations");
+const { isValidEmail, generateToken } = require("../utils/commonUtils");
+const { encryptText, decryptAndMatch } = require("../utils/commonUtils");
 
 async function signUpUser(payload) {
   const { name, email, password } = payload;
@@ -37,8 +37,8 @@ async function signUpUser(payload) {
     };
 
     return successResponse(status.OK, alertMessages.SIGNUP_SUCCESS, info);
-  } catch (err) {
-    throw failResponse(status.SERVER_FAILURE, alertMessages.SERVER_ERROR);
+  } catch (error) {
+    throw failResponse(status.SERVER_FAILURE, error?.message);
   }
 }
 
@@ -75,8 +75,8 @@ async function signInUser(payload) {
     } else {
       return failResponse(status.NOT_FOUND, alertMessages.EMAIL_NOT_FOUND);
     }
-  } catch (err) {
-    throw failResponse(status.SERVER_FAILURE, alertMessages.SERVER_ERROR);
+  } catch (error) {
+    throw failResponse(status.SERVER_FAILURE, error?.message);
   }
 }
 

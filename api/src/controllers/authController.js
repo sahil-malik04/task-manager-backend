@@ -1,4 +1,4 @@
-const { signUpUser, signInUser } = require("../services/authServices");
+const { signUpUser, signInUser } = require("../services/authService");
 const { successAction, failAction } = require("../utils/responseAction");
 
 exports.signUp = async function (req, res) {

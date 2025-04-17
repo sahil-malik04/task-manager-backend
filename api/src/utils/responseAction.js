@@ -3,18 +3,10 @@ module.exports = {
   failAction,
 };
 
-function successAction(data) {
-  if (data?.data) {
-    return {
-      statusCode: data.status,
-      message: data.message,
-      data: data?.data,
-    };
-  }
-  return {
-    statusCode: data.status,
-    message: data.message,
-  };
+function successAction({ status, message, data = null }) {
+  const response = { statusCode: status, message };
+  if (data) response.data = data;
+  return response;
 }
 
 function failAction(error) {
