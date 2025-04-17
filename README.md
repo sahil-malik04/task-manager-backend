@@ -50,3 +50,9 @@ http://localhost:5000/api/
    ```sh
     npm run test
    ```
+
+## Deployment
+
+The Backend is also deployed and API's are accessible online via Render:
+
+- https://task-manager-backend-f0ky.onrender.com/api/
