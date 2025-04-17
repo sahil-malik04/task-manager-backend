@@ -1,4 +1,4 @@
-# Task Management API
+# Task Manager
 
 ## Features
 
