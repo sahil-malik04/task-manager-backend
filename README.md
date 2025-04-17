@@ -5,7 +5,7 @@
 - User authentication using JSON Web Tokens (JWT)
 - Passwords are securely hashed using bcrypt before storing in the database
 - Create, read, update, and delete tasks
-- Rate limiting: limit each IP address to 100 requests per minute to ensure system runs smoothly and securely
+- Rate limiting: limit each IP address to 80 requests per minute to ensure system runs smoothly and securely
 - Structured and modular codebase
 - Proper error and response handling
 - Unit tests with Jest
